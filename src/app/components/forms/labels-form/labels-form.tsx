@@ -1,8 +1,10 @@
 'use client'
 
 import { db, ILabels } from '@/db/db.model'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline'
 import { useState } from 'react'
-import styles from '../event-form/event-form.module.scss'
+import styles from '../event-details/event-form.module.scss'
 
 interface LabelsFormProps {
 	labels: ILabels[]
@@ -58,19 +60,24 @@ const LabelsForm = ({ labels, onClose }: LabelsFormProps) => {
 			<ul>
 				{labels.map((label) => (
 					<li key={label.id}>
-						{label.name} - <button onClick={() => handleDeleteLabel(label.id!)}>Delete</button>{' '}
-						<button onClick={() => setFormData(label)}>Edit</button>
+						{label.name}
+						<button onClick={() => handleDeleteLabel(label.id!)}>
+							<DeleteForeverIcon fontSize='small' />
+						</button>
+						<button onClick={() => setFormData(label)}>
+							<ModeEditOutlineIcon fontSize='small' />
+						</button>
 					</li>
 				))}
 			</ul>
 			<form onSubmit={handleLabelSubmit}>
-				<div className={styles.row}>
+				<div className='row'>
 					<label htmlFor='name'>
 						{formData.id ? 'Edit label:' : 'New label:'}
 						<input type='text' name='name' id='name' value={name} onChange={handleInputChange} />
 					</label>
 				</div>
-				<div className={styles.row}>
+				<div className='row'>
 					<label htmlFor='color'>
 						label color:
 						<input
@@ -82,7 +89,7 @@ const LabelsForm = ({ labels, onClose }: LabelsFormProps) => {
 						/>
 					</label>
 				</div>
-				<div className={styles.row}>
+				<div className='row'>
 					<button type='button' onClick={clearForm}>
 						clear
 					</button>

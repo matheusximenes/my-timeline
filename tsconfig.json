@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "src/app/components/forms/event-details/event-form.tsx", "src/app/components/forms/event-details/editor.jsx"  ],
   "exclude": ["node_modules"]
 }

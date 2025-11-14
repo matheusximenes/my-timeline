@@ -1,8 +1,7 @@
 .baseline {
-	position: sticky;
-	bottom: 20px;
 	margin: 0 50px;
-	z-index: 999;
+	background-color: black;
+	padding: 10px 0;
 	display: flex;
 	flex-direction: row;
 	height: 24px;
@@ -28,7 +27,10 @@
 		}
 
 		.era {
-			font-size: 14px;
+			position: absolute;
+			bottom: -20px;
+			left: 0;
+			font-size: 0.8rem;
 		}
 	}
 }

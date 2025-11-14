@@ -12,7 +12,7 @@ const Baseline = ({ years, step }: BaselineProps) => {
 				<li
 					key={year.year + year.era}
 					className={styles.baselineYear}
-					style={{ marginRight: `${step -1 }px` }}
+					style={{ marginRight: `${step - 1}px` }}
 				>
 					<span>
 						{year.year}

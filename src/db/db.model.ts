@@ -113,6 +113,9 @@ export interface ITimelineEvent {
 	mainLinkUrl?: string
 	mainLinkName?: string
 	isLandmark?: boolean
+	mapName?: string
+	mapLinkUrl?: string
+	notes?: string
 	labels?: string[]
 }
 
@@ -128,7 +131,7 @@ export class DB extends Dexie {
 		super('CustomTimelineDB')
 		this.version(1).stores({
 			timeline:
-				'++id, order, title, description, startYear, startType, startEra, endYear, endType, endEra, customBgColor, customColor, customLineColor, customLineType, mainImgUrl, mainImgName, mainLinkUrl, mainLinkName, isLandmark, labels',
+				'++id, order, title, description, startYear, startType, startEra, endYear, endType, endEra, customBgColor, customColor, customLineColor, customLineType, mainImgUrl, mainImgName, mainLinkUrl, mainLinkName, isLandmark, labels, mapName, mapLinkUrl, notes',
 			labels: '++id, name, defaultColor'
 		})
 	}
