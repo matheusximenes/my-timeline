@@ -2,6 +2,8 @@
 
 import { db, Era, ILabels, ITimelineEvent, Type } from '@/db/db.model'
 import { getTimelineBounds } from '@/utils/timeline-utils'
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder'
+import EditCalendarIcon from '@mui/icons-material/EditCalendar'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { useState } from 'react'
 import Baseline from '../baseline/baseline'
@@ -94,7 +96,9 @@ const Content = () => {
 		setSelectedEvent(event)
 	}
 
-	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+	const handleInputChange = (
+		e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+	) => {
 		const { name, value } = e.target
 		setSelectedEvent({ ...selectedEvent, [name]: value } as ITimelineEvent)
 	}
@@ -179,6 +183,7 @@ const Content = () => {
 						setShownManageLabels(true)
 					}}
 				>
+					<BookmarkBorderIcon fontSize='small' />
 					Manage Labels
 				</button>
 				<button
@@ -188,6 +193,7 @@ const Content = () => {
 						setSelectedEvent({ ...initialFormData, order: possibleNextOrder } as ITimelineEvent)
 					}}
 				>
+					<EditCalendarIcon fontSize='small' />
 					New Event
 				</button>
 			</header>

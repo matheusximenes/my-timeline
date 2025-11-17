@@ -1,12 +1,17 @@
 'use client'
 
 import { Era, ILabels, ITimelineEvent, Type } from '@/db/db.model'
+import CancelIcon from '@mui/icons-material/Cancel'
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
+import SaveIcon from '@mui/icons-material/Save'
 import styles from './event-form.module.scss'
 import { handleFormValidation } from './utils'
 interface IFormProps {
 	activeEvent: ITimelineEvent | null
 	labelsList: ILabels[] | undefined
-	onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void
+	onChange: (
+		e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+	) => void
 	onCheck: (e: React.ChangeEvent<HTMLInputElement>) => void
 	onSelect: (e: React.ChangeEvent<HTMLSelectElement>) => void
 	onClear: () => void
@@ -59,7 +64,8 @@ const EventForm = ({
 		customLineColor,
 		customLineType,
 		mapName,
-		mapLinkUrl
+		mapLinkUrl,
+		notes
 	} = activeEvent || {}
 
 	return (
@@ -215,6 +221,12 @@ const EventForm = ({
 					</label>
 				</div>
 				<div className='row'>
+					<label htmlFor='notes'>
+						Notes
+						<textarea id='notes' name='notes' value={notes} onChange={onChange} />
+					</label>
+				</div>
+				<div className='row'>
 					<label htmlFor='labels'>
 						Labels
 						<select multiple id='labels' name='labels' value={labels ?? []} onChange={onSelect}>
@@ -279,12 +291,18 @@ const EventForm = ({
 				)}
 				<div className='row'>
 					<button type='button' onClick={onClear}>
+						<CancelIcon fontSize='small' />
 						Clear
 					</button>
+					{id && (
+						<button onClick={deleteEvent}>
+							<DeleteOutlineIcon fontSize='small' /> Delete
+						</button>
+					)}
 					<button type='submit' disabled={handleFormValidation(activeEvent)}>
-						Save
+						<SaveIcon fontSize='small' />
+						{id ? 'Save' : 'Create'}
 					</button>
-					{id && <button onClick={deleteEvent}>Delete</button>}
 				</div>
 			</form>
 		</div>

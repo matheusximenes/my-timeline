@@ -9,10 +9,6 @@ li.event {
 		margin: 0;
 		transition: 0.3s all ease-in-out;
 
-		a.map {
-			display: none;
-		}
-
 		&:hover {
 			cursor: pointer;
 			opacity: 0.8;
@@ -22,10 +18,6 @@ li.event {
 				left: 0;
 				border-left: 1px solid white;
 				content: ' ';
-			}
-
-			a.map {
-				display: block;
 			}
 		}
 
