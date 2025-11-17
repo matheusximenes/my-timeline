@@ -198,11 +198,13 @@ const Content = () => {
 				</button>
 			</header>
 			<main className={styles.main}>
-				<Labels
-					labels={labels}
-					activeLabels={activeLabels}
-					handleActiveLabels={handleActiveLabels}
-				/>
+				{labels?.length > 0 && (
+					<Labels
+						labels={labels}
+						activeLabels={activeLabels}
+						handleActiveLabels={handleActiveLabels}
+					/>
+				)}
 				{selectedEvent && (
 					<div className={styles.container}>
 						<button className={styles.closeButton} onClick={() => setSelectedEvent(null)}>
