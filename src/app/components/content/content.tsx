@@ -198,7 +198,7 @@ const Content = () => {
 				</button>
 			</header>
 			<main className={styles.main}>
-				{labels?.length > 0 && (
+				{labels && labels.length > 0 && (
 					<Labels
 						labels={labels}
 						activeLabels={activeLabels}
