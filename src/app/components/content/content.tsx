@@ -14,6 +14,7 @@ import LabelsForm from '../forms/labels-form/labels-form'
 import Grid from '../grid/grid'
 import Labels from '../labels/labels'
 import styles from './content.module.scss'
+import useNoScroll from './hook'
 
 const initialFormData = {
 	id: undefined,
@@ -60,6 +61,8 @@ const Content = () => {
 	const [activeLabels, setActiveLabels] = useState<ILabels[]>([])
 	const allEvents = useLiveQuery(() => db.timeline.toArray())
 	const labels = useLiveQuery(() => db.labels.toArray())
+	// Pass the state variable to the custom hook
+	useNoScroll(!!selectedEvent || shownManageLabels)
 
 	if (!allEvents) {
 		return null

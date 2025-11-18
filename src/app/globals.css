@@ -228,3 +228,9 @@ button {
 		outline-offset: 2px;
 	}
 }
+
+body.no-scroll {
+	overflow: hidden;
+	/* Optional: Keep the page position stable when the scrollbar disappears */
+	padding-right: 17px;
+}
