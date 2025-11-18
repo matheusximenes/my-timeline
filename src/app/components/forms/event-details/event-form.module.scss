@@ -1,21 +1,62 @@
 .formContainer {
+	max-width: 100%;
+	margin: 0;
+	padding: 1.5rem;
+	background: transparent;
+	border-radius: 0;
+	border: none;
+
+	h2 {
+		margin-bottom: 1.5rem;
+		font-size: 1.75rem;
+		font-weight: 600;
+		color: rgba(255, 255, 255, 0.95);
+		letter-spacing: -0.02em;
+		text-align: center;
+	}
+
 	ul {
-		margin: 30px 40px;
+		margin: 1.5rem 0 2rem;
+		padding: 0;
+		border-radius: 8px;
+		background: rgba(255, 255, 255, 0.02);
+		border: 1px solid rgba(255, 255, 255, 0.06);
+		overflow: hidden;
+
 		li {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 			align-items: center;
 			list-style: none;
-			border-bottom: 1px solid hsla(0, 0%, 12%, 1);
+			padding: 0.875rem 1rem;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+			transition: background-color 0.2s ease;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			&:hover {
+				background-color: rgba(255, 255, 255, 0.03);
+			}
 
 			button {
 				background-color: transparent;
-				color: white;
+				color: rgba(255, 255, 255, 0.7);
 				border: none;
-				border-left: 1px solid hsla(0, 0%, 12%, 1);
-				padding-right: 10px;
-				padding: 10px;
+				padding: 0.5rem;
+				margin-right: 0;
+				margin-left: 0.5rem;
+				transition: all 0.2s ease;
+				border-radius: 4px;
+				box-shadow: none;
+
+				&:hover {
+					background-color: rgba(255, 255, 255, 0.1);
+					color: white;
+					transform: none;
+				}
 
 				&:first-child {
 					margin-left: auto;
@@ -28,6 +69,33 @@
 		label {
 			&:first-child {
 				margin-left: 0;
+			}
+		}
+
+		button[type='submit'] {
+			background: white;
+			color: black;
+			font-weight: 600;
+			box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+
+			&:hover:not(:disabled) {
+				background: #ccc;
+				box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+			}
+
+			&:disabled {
+				background: rgba(102, 126, 234, 0.3);
+				box-shadow: none;
+			}
+		}
+
+		button[type='button'] {
+			background: rgba(255, 255, 255, 0.08);
+			color: rgba(255, 255, 255, 0.85);
+
+			&:hover {
+				background: rgba(255, 255, 255, 0.12);
+				color: white;
 			}
 		}
 	}

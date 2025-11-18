@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
 	title: 'My Timeline App',
-	description: 'Create your timeline locally'
+	description: 'Create your timeline locally',
+	icons: {
+		icon: '/favicon.svg'
+	}
 }
 
 export default function RootLayout({

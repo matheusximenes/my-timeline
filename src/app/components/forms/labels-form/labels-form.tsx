@@ -91,9 +91,9 @@ const LabelsForm = ({ labels, onClose }: LabelsFormProps) => {
 				</div>
 				<div className='row'>
 					<button type='button' onClick={clearForm}>
-						clear
+						Clear
 					</button>
-					<button type='submit'>save</button>
+					<button type='submit'>Save</button>
 				</div>
 			</form>
 		</div>
