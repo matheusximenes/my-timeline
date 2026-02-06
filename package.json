@@ -2,6 +2,9 @@
 	"name": "custom-timeline",
 	"version": "0.1.0",
 	"private": true,
+	"engines": {
+		"node": ">=18.x"
+	},
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
@@ -16,10 +19,10 @@
 		"dexie": "^4.2.1",
 		"dexie-react-hooks": "^4.2.0",
 		"next": "^16.1.1",
-		"quill": "^2.0.3",
+		"quill": "^2.0.2",
 		"react": "^19.2.1",
 		"react-dom": "^19.2.1",
-		"react-quilljs": "^2.0.5"
+		"react-quilljs": "^2.0.4"
 	},
 	"devDependencies": {
 		"@types/node": "^20",
